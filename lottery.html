@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom styles here */
+        body {
+            background-image: url('https://img.freepik.com/free-psd/luxury-podium-product-presentation-3d-render_47987-15178.jpg?t=st=1709841773~exp=1709845373~hmac=7e9541af4c43aa10d192a9646f9fe85e8fd427298eb954415740787dcd2dcf46&w=900'); /* Replace 'your_background_image.jpg' with your actual image path */
+            background-size: cover;
+            background-position: center;
+            padding-top: 50px;
+        }
+        .lottery-container {
+            max-width: 500px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Background color for better readability */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a slight depth effect */
+        }
+        .btn-find-winner {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-find-winner:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+    <div class="container lottery-container text-center">
+        <button type="button" id="btn" onclick="findWinner()" class="btn btn-lg btn-find-winner mt-3" data-toggle="modal" data-target="#myModal">Find Winner</button>
+        <h1 id="head" class="mt-4"></h1>
+
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">The Winner is</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body h3" id="modelBody"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script>
+        var arr = [1001, 2002, 3003, 4004, 5005];
+
+        function findWinner() {
+            var result = arr[Math.floor(Math.random() * (arr.length))];
+            // document.getElementById("modelBody").innerHTML = `${result}`;
+            document.getElementById("head").innerHTML = `The winner is ${result}`;
+        }
+    </script>
+</body>
+</html>
